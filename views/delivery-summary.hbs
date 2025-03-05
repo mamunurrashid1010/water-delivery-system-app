@@ -1,0 +1,22 @@
+{{> navbar}}
+
+<h3 class="mt-4">Deliveries on {{date}}</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Bottles</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each deliveriesWithCustomerInfo}}
+        <tr>
+            <td>{{this.customer.name}}</td>
+            <td>{{this.bottles_delivered}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{!-- <a href="/" class="btn btn-secondary">Back to Home</a> --}}

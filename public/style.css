@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.highlight {
+    background-color: yellow !important;
+}
+
+.yellow-background {
+    background-color: yellow;
+}
+
+.transparent-background {
+    background-color: transparent;
+}
+

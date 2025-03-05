@@ -1,0 +1,36 @@
+{{> navbar}}
+
+<h2>Delivery List</h2>
+
+<!-- Delivery Form -->
+<form action="/deliveries/add" method="POST" class="mb-4">
+    <div class="mb-3">
+        <label for="customer" class="form-label">Select Customer</label>
+        <select id="customer" name="customer" class="form-control" required>
+            {{#each customers}}
+            <option value="{{this._id}}">{{this.name}} ({{this.address}})</option>
+            {{/each}}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Add Delivery</button>
+</form>
+
+<!-- Delivery Table -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each deliveries}}
+        <tr>
+            <td>{{this.customer.id}}</td>
+            <td>{{this.customer.name}}</td>
+            <td>{{this.date}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
