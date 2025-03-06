@@ -14,7 +14,9 @@ const CustomerSchema = new mongoose.Schema({
     name: { type: String, required: true },
     phone: { type: String, required: true },
     coupons: { type: Number, required: true, default: 0, min: 0, max: 10 },
-});
+},
+    {collection: "customer"}
+);
 
 CustomerSchema.index({ id: 1 }); // Index for faster lookup by customer ID
 

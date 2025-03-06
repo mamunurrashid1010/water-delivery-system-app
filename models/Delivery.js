@@ -12,7 +12,9 @@ const DeliverySchema = new mongoose.Schema({
     customer_id: { type: Number, required: true },
     date: { type: String, default: Date.now },
     bottles_delivered: { type: Number, required: true, default: 0 },
-});
+    },
+    {collection: "delivery"}
+);
 
 DeliverySchema.index({ customer_id: 1, date: -1 }); // Index for fast retrieval sorted by date
 
